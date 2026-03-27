@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.jasminesystems.analisislexico.controller.MainController">
+
+    <!-- Título principal -->
+    <top>
+        <Label text="Analizador Léxico"
+               style="-fx-font-family: 'Arial Black'; -fx-font-size: 28px; -fx-text-fill: #1F618D;"
+               BorderPane.alignment="CENTER"/>
+    </top>
+
+    <center>
+        <!-- VBox principal para apilar todo verticalmente -->
+        <VBox spacing="15">
+            <padding>
+                <Insets top="15" right="15" bottom="15" left="15"/>
+            </padding>
+
+            <!-- Sección Código -->
+            <VBox spacing="5"
+                  style="-fx-background-color: #D6EAF8; -fx-padding: 10; -fx-border-color: #1F618D; -fx-border-width: 2; -fx-border-radius: 5; -fx-background-radius: 5;">
+                <Label text="Código a analizar:"
+                       style="-fx-font-family: 'Verdana'; -fx-font-size: 16px; -fx-text-fill: #1B4F72;"/>
+                <TextArea fx:id="taCodigo" prefHeight="150" style="-fx-font-family: 'Consolas'; -fx-font-size: 14px;"/>
+                <HBox spacing="10">
+                    <Button fx:id="btnAnalizar" text="Analizar"
+                            style="-fx-background-color: #28B463; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-family: 'Verdana'; -fx-font-weight: bold;"/>
+                    <Button fx:id="btnLimpiar" text="Limpiar"
+                            style="-fx-background-color: #E74C3C; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-family: 'Verdana'; -fx-font-weight: bold;"/>
+                </HBox>
+            </VBox>
+
+            <!-- Sección Tokens -->
+            <VBox spacing="5"
+                  style="-fx-background-color: #D5F5E3; -fx-padding: 10; -fx-border-color: #239B56; -fx-border-width: 2; -fx-border-radius: 5; -fx-background-radius: 5;">
+                <Label text="Tokens:" style="-fx-font-family: 'Verdana'; -fx-font-size: 16px; -fx-text-fill: #196F3D;"/>
+                <TextArea fx:id="taTokens" prefHeight="150" editable="false"
+                          style="-fx-font-family: 'Consolas'; -fx-font-size: 14px;"/>
+            </VBox>
+
+            <!-- Sección Errores -->
+            <VBox spacing="5"
+                  style="-fx-background-color: #FADBD8; -fx-padding: 10; -fx-border-color: #C0392B; -fx-border-width: 2; -fx-border-radius: 5; -fx-background-radius: 5;">
+                <Label text="Errores Léxicos:"
+                       style="-fx-font-family: 'Verdana'; -fx-font-size: 16px; -fx-text-fill: #922B21;"/>
+                <TextArea fx:id="taErrores" prefHeight="150" editable="false"
+                          style="-fx-font-family: 'Consolas'; -fx-font-size: 14px;"/>
+            </VBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>
